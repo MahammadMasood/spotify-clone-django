@@ -1,0 +1,201 @@
+{%load static%}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Music Player</title>
+  <link rel="stylesheet" href="{% static "css/style.css" %}">
+  <link rel="stylesheet" href="{% static "css/utility.css" %}">
+</head>
+
+<body>
+  <div class="container flex bg-black">
+    <div class="left  bg-grey">
+
+      <div class="home bg-dark-grey rounded m-1 p-1">
+        <img class="main invert" src="{% static "images/spotify.svg" %}" alt="">
+        Spotify
+        <ul>
+
+
+          <li>
+            <img class="invert" src="https://cdn-icons-png.flaticon.com/512/25/25694.png" alt="home">
+            Home
+          </li>
+          <li>
+            <img class="invert" src="https://cdn-icons-png.flaticon.com/512/149/149852.png" alt="search">
+            Search
+          </li>
+        </ul>
+      </div>
+      <div class="library bg-dark-grey rounded m-1 p-1">
+        <div class="heading">
+          <img class="invert" src="{% static "images/book.png" alt="">
+          <h2>your library</h2>
+        </div>
+        <div class="footer">
+          <a href="https://www.spotify.com/in-en/legal/end-user-agreement/">Legal</a>
+          <a href="https://www.spotify.com/in-en/legal/privacy-policy/">Privacy Policy</a>
+          <a href="https://www.spotify.com/in-en/legal/cookies-policy/">Cookies</a>
+          <a href="https://www.spotify.com/in-en/legal/privacy-policy/#s3">About Ads</a>
+          <a href="https://www.spotify.com/in-en/accessibility">Accessibility</a>
+        </div>
+      </div>
+
+    </div>
+    <div class="right rounded ">
+      <div class="header">
+        <div class="nav">
+          <img src="{% static "images/left.svg" %}" alt="">
+          <img src="{% static "images/right.svg" %}" alt="">
+        </div>
+        <div class="buttons">
+<form action="{% url 'logout' %}" method="post">
+    {% csrf_token %}
+    <button type="submit" class="loginbtn">Logout</button>
+</form>
+        </div>
+      </div>
+      <div class="spotifyplaylists">
+        <h1>Spotify Playlists</h1>
+        <div class="cardcontainer">
+          <div class="card" data-song="{% static "songs/1.mp3" %}">
+                      <div class="play">
+              <svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 512 512">
+  <circle cx="256" cy="256" r="256" fill="green"/>
+  <path d="M256 56c110.28 0 200 89.72 200 200s-89.72 200-200 200S56 366.28 56 256 145.72 56 256 56zm-64 112v176l144-88-144-88z" fill="black"/>
+</svg>
+          </div>
+            <img src="{% static "images/1.jpg" %}" alt="">
+
+          
+            <h2>Sapphire</h2>
+            <p>Ed Sheeran</p>
+           
+          </div>
+             <div class="card" data-song="{% static "songs/2.mp3" %}">
+                             <div class="play">
+              <svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 512 512">
+  <circle cx="256" cy="256" r="256" fill="green"/>
+  <path d="M256 56c110.28 0 200 89.72 200 200s-89.72 200-200 200S56 366.28 56 256 145.72 56 256 56zm-64 112v176l144-88-144-88z" fill="black"/>
+</svg>
+          </div>
+            <img class="c-2" src="{% static "images/2.jpg" %}" alt="">
+            <h2>Mann Ye Mera (From "Metro.....In Dino")</h2>
+            <p>Pritham,vishal mishra,Nilesh mishra</p>
+          </div>
+<div class="card" data-song="{% static "songs/3.mp3" %}">
+                      <div class="play">
+              <svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 512 512">
+  <circle cx="256" cy="256" r="256" fill="green"/>
+  <path d="M256 56c110.28 0 200 89.72 200 200s-89.72 200-200 200S56 366.28 56 256 145.72 56 256 56zm-64 112v176l144-88-144-88z" fill="black"/>
+</svg>
+          </div>
+            <img src="{% static "images/3.jpg" %}" alt="">
+
+          
+            <h2>Danks Anthem</h2>
+            <p>Sumedh K</p>
+          </div>
+          <div class="card" data-song="{% static "songs/4.mp3" %}">
+                      <div class="play">
+              <svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 512 512">
+  <circle cx="256" cy="256" r="256" fill="green"/>
+  <path d="M256 56c110.28 0 200 89.72 200 200s-89.72 200-200 200S56 366.28 56 256 145.72 56 256 56zm-64 112v176l144-88-144-88z" fill="black"/>
+</svg>
+          </div>
+            <img src="{% static "images/4.jpg" %}" alt="">
+
+          
+            <h2>Vishwaroopam</h2>
+            <p>Kamal Hasan</p>
+          </div>
+          <div class="card" data-song="{% static "songs/5.mp3" %}">
+                      <div class="play">
+              <svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 512 512">
+  <circle cx="256" cy="256" r="256" fill="green"/>
+  <path d="M256 56c110.28 0 200 89.72 200 200s-89.72 200-200 200S56 366.28 56 256 145.72 56 256 56zm-64 112v176l144-88-144-88z" fill="black"/>
+</svg>
+          </div>
+            <img src="{% static "images/5.jpg" %}" alt="">
+
+          
+            <h2>Monica</h2>
+            <p>Pooja Hegde</p>
+          </div>
+          <div class="card" data-song="{% static "songs/6.mp3" %}">
+                      <div class="play">
+              <svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 512 512">
+  <circle cx="256" cy="256" r="256" fill="green"/>
+  <path d="M256 56c110.28 0 200 89.72 200 200s-89.72 200-200 200S56 366.28 56 256 145.72 56 256 56zm-64 112v176l144-88-144-88z" fill="black"/>
+</svg>
+          </div>
+            <img src="{% static "images/6.jpg" %}" alt="">
+
+          
+            <h2>Naranga Paal</h2>
+            <p>Gabri</p>
+          </div>
+
+          <div class="card" data-song="{% static "songs/7.mp3" %}">
+                      <div class="play">
+              <svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 512 512">
+  <circle cx="256" cy="256" r="256" fill="green"/>
+  <path d="M256 56c110.28 0 200 89.72 200 200s-89.72 200-200 200S56 366.28 56 256 145.72 56 256 56zm-64 112v176l144-88-144-88z" fill="black"/>
+</svg>
+          </div>
+            <img src="{% static "images/7.jpg" %}" alt="">
+
+          
+            <h2>KD</h2>
+            <p>Arjun Janya</p>
+          </div>
+
+          <div class="card" data-song="{% static "songs/8.mp3" %}">
+                      <div class="play">
+              <svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 512 512">
+  <circle cx="256" cy="256" r="256" fill="green"/>
+  <path d="M256 56c110.28 0 200 89.72 200 200s-89.72 200-200 200S56 366.28 56 256 145.72 56 256 56zm-64 112v176l144-88-144-88z" fill="black"/>
+</svg>
+          </div>
+            <img src="{% static "images/8.jpg" %}" alt="">
+
+          
+        
+            <h2>Alemariye</h2>
+            <p>From("Ratnan Prapancha")</p>
+          </div>
+
+   <!-- Audio player-->
+          <audio id="audioPlayer" controls></audio>
+        </div>
+      <div class="player-controls">
+    <!-- Prev Button -->
+    <button class="player-button" id="prevBtn" title="Previous">
+      <svg viewBox="0 0 24 24"><path d="M6 18V6h2v12H6zm3.5-6L18 6v12l-8.5-6z"/></svg>
+    </button>
+
+    <!-- Play/Pause Button -->
+<button class="player-button" id="playPauseBtn" title="Play/Pause">
+  <svg id="playPauseIcon" viewBox="0 0 24 24">
+    <path d="M8 5v14l11-7z"/> <!-- Default: Play -->
+  </svg>
+</button>
+
+
+    <!-- Next Button -->
+    <button class="player-button" id="nextBtn" title="Next">
+      <svg viewBox="0 0 24 24"><path d="M16 6v12h-2V6h2zm-3.5 6L6 18V6l6.5 6z"/></svg>
+    </button>
+  </div>
+      </div>
+
+    </div>
+  </div>
+  <script src="{% static "js/script.js" %}"></script>
+</body>
+
+</html>

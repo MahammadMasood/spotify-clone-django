@@ -1,0 +1,1 @@
+console.log("masood" >3)

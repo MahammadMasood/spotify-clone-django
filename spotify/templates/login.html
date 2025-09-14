@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=<div class="form-container">
+          
+    <title>Login</title>
+</head>
+<body>
+                   <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f4f4;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .form-container {
+      width: 350px;
+      background: #fff;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .form-btn {
+      display: flex;
+      justify-content: space-around;
+      margin-bottom: 20px;
+      position: relative;
+    }
+
+    .form-btn span {
+      cursor: pointer;
+      font-size: 18px;
+      font-weight: bold;
+      padding: 10px;
+      color: #333;
+    }
+
+    #Indicator {
+      width: 50%;
+      height: 3px;
+      background: #ff5722;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      transition: 0.3s;
+    }
+
+    form {
+      width: 100%;
+      transition: 0.5s;
+    }
+
+    form input {
+      width: 100%;
+      margin: 10px 0;
+      padding: 12px;
+      border: 1px solid #ddd;
+      border-radius: 6px;
+      outline: none;
+    }
+
+    .btn {
+      width: 100%;
+      padding: 12px;
+      background: #ff5722;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    .btn:hover {
+      background: #e64a19;
+    }
+
+    a {
+      font-size: 14px;
+      display: inline-block;
+      margin-top: 10px;
+      text-decoration: none;
+      color: #555;
+    }
+
+    /* hide register form initially */
+    #RegForm {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="form-container">
+    <div class="form-btn">
+      <span onclick="login()">Login</span>
+      <span onclick="register()">Register</span>
+      <hr id="Indicator">
+    </div>
+
+    <form id="LoginForm" method="post" action="/login">
+        {% csrf_token %}
+      <input type="text" placeholder="Username" name="username">
+      <input type="password" placeholder="Password" name="password">
+      <button type="submit" class="btn">Login</button>
+         {% for message in messages %}
+  <p style="color:red;">{{ message }}</p>
+{% endfor %}
+    </form>
+
+    <form id="RegForm" method="post" action="/signup">
+        {% csrf_token %}
+      <input type="text" placeholder="username" name="username">
+      <input type="email" placeholder="Email" name="email">
+      <input type="password" placeholder="Password" name="password">
+      <button type="submit" class="btn">Register</button>
+    </form>
+ 
+  </div>
+
+  <script>
+    let LoginForm = document.getElementById("LoginForm");
+    let RegForm = document.getElementById("RegForm");
+    let Indicator = document.getElementById("Indicator");
+
+    function register() {
+      LoginForm.style.display = "none";
+      RegForm.style.display = "block";
+      Indicator.style.transform = "translateX(100%)";
+    }
+
+    function login() {
+      LoginForm.style.display = "block";
+      RegForm.style.display = "none";
+      Indicator.style.transform = "translateX(0)";
+    }
+  </script>
+</body>
+</html>
